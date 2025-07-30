@@ -1,0 +1,25 @@
+@import "../../styles/root.css";
+
+.SidebarContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 1.4rem 1.6rem;
+  margin-top: 3rem;
+  height: 100vh;
+}
+.SidebarSection {
+  background-color: var(--primary-color);
+  padding: 1.3rem 1.3rem;
+}
+
+.SidebarSection:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+.SidebarSectionName {
+  font-size: 1.3rem;
+  text-align: center;
+  color: white;
+}

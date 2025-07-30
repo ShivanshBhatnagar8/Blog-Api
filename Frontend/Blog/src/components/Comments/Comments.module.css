@@ -1,0 +1,158 @@
+@import "../../styles/root.css";
+
+.commentSection {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.commentSection h2 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.commentInputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  width: 80%;
+  margin-inline: auto;
+}
+
+.commentInput {
+  padding: 1.4rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none;
+  font-size: 1rem;
+  background-color: var(--bg-color);
+  transition: border-color 0.3s;
+}
+
+.commentInput:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.commentButton {
+  align-self: flex-end;
+  padding: 1.2rem 1.4rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.commentButton:hover {
+  opacity: 0.8;
+}
+
+.commentList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.commentItem {
+  background-color: var(--bg-color);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.commentHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.commentAuthor {
+  font-weight: bold;
+}
+
+.commentDate {
+  font-style: italic;
+  color: var(--text-color);
+}
+
+.commentText {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  white-space: pre-wrap;
+}
+.errormessage {
+  margin-left: 2rem;
+  font-size: 1.2rem;
+  color: red;
+}
+.commentCardContainer {
+  display: flex;
+  padding: 1.4rem 1.4rem;
+  gap: 1.2rem;
+  width: 35%;
+  flex-wrap: wrap;
+  align-self: flex-start;
+}
+.commentCard {
+  background-color: #fef3e7;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-self: flex-start;
+}
+.commentContent {
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  font-size: 1.4rem;
+}
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.card-content {
+  color: #444;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardContentBox {
+  display: flex;
+  justify-content: space-between;
+}
+.updateBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.updateBox input {
+  width: 100%;
+}
+.svgContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+svg {
+  cursor: pointer;
+}

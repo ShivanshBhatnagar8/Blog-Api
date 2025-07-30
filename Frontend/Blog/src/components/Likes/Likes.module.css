@@ -1,0 +1,27 @@
+@import "../../styles/root.css";
+
+.likeContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 85%;
+  margin: 0 auto;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+}
+.icon:hover {
+  cursor: pointer;
+}
+.count {
+  font-size: 1.4rem;
+}
+.liked {
+  fill: var(--accent-color);
+}
+.disabled {
+  fill: gray;
+  pointer-events: none;
+  cursor: not-allowed;
+}
