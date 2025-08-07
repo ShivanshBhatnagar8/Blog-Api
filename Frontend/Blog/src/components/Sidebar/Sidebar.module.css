@@ -1,25 +1,37 @@
 @import "../../styles/root.css";
 
 .SidebarContainer {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  gap: 1.4rem;
-  padding: 1.4rem 1.6rem;
-  margin-top: 3rem;
+  background-color: #f2e6fa;
   height: 100vh;
+  padding: 2rem 1rem;
+  border-right: 1px solid #e5e7eb;
 }
+
+.SidebarTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
 .SidebarSection {
-  background-color: var(--primary-color);
-  padding: 1.3rem 1.3rem;
+  background-color: #a855f7;
+  color: white;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .SidebarSection:hover {
-  opacity: 0.9;
-  cursor: pointer;
+  background-color: #9333ea;
 }
+
 .SidebarSectionName {
-  font-size: 1.3rem;
-  text-align: center;
-  color: white;
+  font-size: 1rem;
+  font-weight: 500;
 }
