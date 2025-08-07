@@ -1,20 +1,99 @@
 @import "../../styles/root.css";
 
-.postContainer {
+.postsContainer {
   display: flex;
   gap: 2rem;
   width: 100%;
 }
-.postContainer .divider {
-  background-color: rgba(0, 0, 0, 0.1);
-  width: 1px;
-  height: 100%;
-  align-self: stretch;
-}
+
 .SidebarColumn {
   width: 20%;
-  display: flex;
 }
+.postTile {
+  background-color: var(--secondary-color);
+  padding: 1.5rem;
+  border-radius: 20px;
+  margin: 1rem;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.postTileTitle {
+  text-align: center;
+}
+.postTileContent {
+  color: #1a1a1a;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.postLink {
+  text-decoration: none;
+  font-weight: 500;
+  color: #1a1a1a;
+  font-size: 1.2rem;
+}
+
+.postTileBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.postTileDate {
+  font-size: 1rem;
+  color: #1a1a1a;
+}
+
+.buttonContainer {
+  display: flex;
+
+  gap: 0.5rem;
+}
+
+.markButton {
+  background-color: #a855f7;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.markButton:hover {
+  background-color: #9333ea;
+}
+
+.errormessage {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.svgContainer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.postUpdateBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.postContent {
+  min-height: 80px;
+  padding: 0.5rem;
+  font-size: 0.95rem;
+}
+
 .Postbox {
   display: flex;
   gap: 2rem;
@@ -24,104 +103,7 @@
   margin-top: 3rem;
   align-self: start;
 }
-.postTile {
-  width: 45%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  background-color: var(--secondary-color);
-  padding: 1.2rem 1.4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  border-radius: 2rem;
-  align-self: start;
-}
 
-.postTileTitle {
-  font-size: 1.4rem;
-  color: var(--text-color);
-  text-align: center;
-}
-.postTileContent {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  font-size: 1.4rem;
-  color: var(--text-color);
-}
-.postTileDate {
-  font-size: 1.4rem;
-  color: var(--text-color);
-  align-self: flex-end;
-}
-.postTileBox {
-  display: flex;
-  justify-content: space-between;
-}
-.postLink {
-  color: black;
-  text-decoration: none;
-  font-size: 1.4rem;
-}
-.postLink:hover {
-  opacity: 0.7;
-}
-.postSection {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 4rem;
-  padding: 1.2rem 1.2rem;
-  gap: 2rem;
-}
-.postUpdateBox {
-  display: flex;
-  justify-content: center;
-  gap: 1.4rem;
-  flex-direction: column;
-}
-.postContent {
-  width: 60%;
-  padding: 1rem;
-  font-size: 1.8rem;
-  font-family: inherit;
-  color: inherit;
-  border: none;
-  background-color: #fdf2e9;
-  border-radius: 9px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-.postSectionTitle {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 1.2rem;
-}
-.postSectionContent {
-  font-size: 1.6rem;
-  width: 90%;
-  line-height: 3.4rem;
-  margin: 0 auto;
-  text-align: justify;
-  word-spacing: 1px;
-}
-.postSectionBox {
-  display: flex;
-  justify-content: space-between;
-  width: 70%;
-  margin: 0 auto;
-}
-.postSectionBox span {
-  font-size: 1.2rem;
-}
-.postSectionDate {
-  font-size: 1.4rem;
-  font-weight: 500;
-}
-.buttonContainer {
-  display: flex;
-  gap: 1.4rem;
-  width: 100%;
-}
 .markButton {
   padding: 1.2rem 1.4rem;
   background-color: var(--primary-color);
@@ -132,6 +114,7 @@
   font-weight: 600;
   align-self: center;
   transition: background-color 0.3s;
+  font-size: 1.2rem;
 }
 .markButton:hover {
   opacity: 0.8;
@@ -172,4 +155,38 @@
   display: flex;
   justify-content: space-between;
   width: 60%;
+}
+.postSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+  padding: 1.2rem 1.2rem;
+  gap: 2rem;
+}
+.postSectionContent {
+  font-size: 1.6rem;
+  width: 90%;
+  line-height: 3.4rem;
+  margin: 0 auto;
+  text-align: justify;
+  word-spacing: 1px;
+}
+.postSectionBox {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
+}
+.postSectionBox span {
+  font-size: 1.2rem;
+}
+.postSectionDate {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
