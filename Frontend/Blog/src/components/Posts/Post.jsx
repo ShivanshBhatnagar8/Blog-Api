@@ -8,7 +8,7 @@ import Comments from "../Comments/Comments";
 import CommentCard from "../Comments/CommentCard";
 import Likes from "../Likes/Likes";
 
-function Post({ url, showSidebar, allPosts }) {
+function Post({ url, showSidebar, allPosts, setIsLoggedIn }) {
   const navigate = useNavigate();
   const location = useLocation();
   const isGuestMode = location?.state?.guestMode;
@@ -23,8 +23,13 @@ function Post({ url, showSidebar, allPosts }) {
   const { data, error } = useSWR(postUrl, fetcher);
 
   useEffect(() => {
+    setIsLoggedIn(false);
+
     if (error) {
       navigate("/error", { state: { error: true } });
+    }
+    if (data?.isAuthorized) {
+      setIsLoggedIn(true);
     }
   }, [error, data]);
   function getAllPosts() {
@@ -49,7 +54,7 @@ function Post({ url, showSidebar, allPosts }) {
   return (
     <>
       {showSidebar ? (
-        <div className={styles.postContainer}>
+        <div className={styles.postsContainer}>
           {data?.isAuthorized && !isGuestMode ? (
             <div className={styles.SidebarColumn}>
               <Sidebar
