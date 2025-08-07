@@ -13,6 +13,7 @@ function Form({
   link,
   method,
   setIsLoggedIn,
+  isLoggedIn,
 }) {
   const [body, setBody] = useState({});
   const [error, setError] = useState({});
@@ -66,7 +67,7 @@ function Form({
           setIsLoggedIn(true);
           setError({});
         }
-        if (isCreatePost) {
+        if (isCreatePost && isLoggedIn) {
           navigate("/posts");
           setError({});
         }
