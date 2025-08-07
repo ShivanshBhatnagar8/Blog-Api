@@ -3,6 +3,7 @@ import Error from "./components/Error/Error";
 import Home from "./components/Home/Home";
 import Form from "./components/Form/Form";
 import Post from "./components/Posts/Post";
+import { Navigate } from "react-router-dom";
 import { URL } from "./utils/constants";
 const routes = (isLoggedIn, setIsLoggedIn) => [
   {
@@ -33,35 +34,78 @@ const routes = (isLoggedIn, setIsLoggedIn) => [
       },
       {
         path: "create-post",
-        element: <Form isCreatePost={true} link="posts/" method="POST" />,
+        element: isLoggedIn ? (
+          <Form
+            isLoggedIn={isLoggedIn}
+            isCreatePost={true}
+            link="posts/"
+            method="POST"
+          />
+        ) : (
+          <Navigate to="/login" />
+        ),
       },
       {
         path: "/posts",
         element: (
-          <Post url={`${URL}posts`} showSidebar={true} allPosts={true} />
+          <Post
+            url={`${URL}posts`}
+            showSidebar={true}
+            allPosts={true}
+            setIsLoggedIn={setIsLoggedIn}
+          />
         ),
       },
       {
         path: "/post/:id",
-        element: <Post url={`${URL}posts/`} showSidebar={false} />,
+        element: (
+          <Post
+            url={`${URL}posts/`}
+            showSidebar={false}
+            setIsLoggedIn={setIsLoggedIn}
+          />
+        ),
       },
       {
         path: "posts/unpublished",
-        element: <Post url={`${URL}posts/unpublished`} showSidebar={true} />,
+        element: (
+          <Post
+            url={`${URL}posts/unpublished`}
+            showSidebar={true}
+            setIsLoggedIn={setIsLoggedIn}
+          />
+        ),
       },
       {
         path: "posts/me",
-        element: <Post url={`${URL}posts/me`} showSidebar={true} />,
+        element: (
+          <Post
+            url={`${URL}posts/me`}
+            showSidebar={true}
+            setIsLoggedIn={setIsLoggedIn}
+          />
+        ),
       },
       {
         path: "posts/liked",
         element: (
-          <Post url={`${URL}posts/liked`} showSidebar={true} allPosts={true} />
+          <Post
+            url={`${URL}posts/liked`}
+            showSidebar={true}
+            allPosts={true}
+            setIsLoggedIn={setIsLoggedIn}
+          />
         ),
       },
       {
         path: "comments/me",
-        element: <Post url={`${URL}comments/me`} showSidebar={true} />,
+        element: (
+          <Post
+            url={`${URL}comments/me`}
+            showSidebar={true}
+            setIsLoggedIn={setIsLoggedIn}
+          />
+        ),
       },
     ],
   },
