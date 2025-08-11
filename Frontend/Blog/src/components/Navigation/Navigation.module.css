@@ -33,3 +33,19 @@
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
+@media (max-width: 500px) {
+  .header {
+    padding: 1rem 1rem;
+  }
+  .navigation {
+    width: 100%;
+  }
+  .heading {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 400px) {
+  .links {
+    gap: 1rem;
+  }
+}

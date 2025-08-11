@@ -78,3 +78,18 @@ form button:hover {
   justify-content: space-between;
   width: 80%;
 }
+@media (max-width: 900px) {
+  form {
+    width: 80%;
+    margin-inline: auto;
+  }
+}
+@media (max-width: 500px) {
+  form {
+    width: 90%;
+  }
+  .buttonContainer {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}

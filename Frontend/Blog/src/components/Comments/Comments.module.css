@@ -156,3 +156,25 @@
 svg {
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .commentCardContainer {
+    width: 100%;
+  }
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .commentInputBox {
+    width: 90%;
+  }
+}
+@media (max-width: 400px) {
+  .commentInputBox {
+    width: 100%;
+  }
+  .commentList {
+    width: 100%;
+  }
+}

@@ -24,3 +24,10 @@ body {
   align-items: center;
   width: 100%;
 }
+/* Media queries */
+
+@media (max-width: 900px) {
+  #root {
+    align-items: flex-start;
+  }
+}

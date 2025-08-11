@@ -59,11 +59,14 @@ function Home({ setInLoggedIn }) {
             Explore as Guest
           </Link>
         </div>
+
         <div className={styles.imageCollage}>
           <img src={bookImage} alt="Image 1" className={styles.topImg} />
           <img src={WritingImage} alt="Image 2" className={styles.middleImg} />
           <img src={BlogImage} alt="Image 3" className={styles.bottomImg} />
         </div>
+
+        <div className={styles.mobileDiv}></div>
       </main>
     </>
   );

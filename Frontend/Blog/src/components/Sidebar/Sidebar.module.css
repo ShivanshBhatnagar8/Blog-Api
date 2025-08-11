@@ -35,3 +35,19 @@
   font-size: 1rem;
   font-weight: 500;
 }
+@media (max-width: 768px) {
+  .SidebarContainer {
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+  }
+  .SidebarSection {
+    background-color: inherit;
+    color: black;
+    padding: auto;
+    border-radius: 0%;
+  }
+  .SidebarSection:hover {
+    background-color: inherit;
+  }
+}

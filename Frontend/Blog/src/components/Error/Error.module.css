@@ -25,3 +25,18 @@ img {
 .homeLink:hover {
   opacity: 0.7;
 }
+@media (max-width: 1024px) {
+  .error {
+    text-align: center;
+  }
+}
+@media (max-width: 900px) {
+  img {
+    width: 50%;
+  }
+}
+@media (max-width: 500px) {
+  img {
+    width: 70%;
+  }
+}
