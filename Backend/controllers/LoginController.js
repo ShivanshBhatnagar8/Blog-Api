@@ -37,7 +37,12 @@ async function loginUser(req, res) {
 
 async function logoutUser(req, res) {
   try {
-    res.cookie("jwt", "", { maxAge: 1 });
+    res.clearCookie("jwt", {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      path: "/",
+    });
     res.status(200).json(`Logout successful`);
   } catch (error) {
     return res.status(500).json("Something went Wrong");
