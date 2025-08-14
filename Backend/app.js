@@ -11,7 +11,7 @@ const forgotPasswordRoutes = require("./routes/ForgotPassword");
 const loginRoutes = require("./routes/Login");
 const postRoutes = require("./routes/Posts");
 const commentRoutes = require("./routes/Comments");
-
+const PORT = process.env.PORT || 3000;
 app.use(
   cors({
     origin: true,
@@ -28,4 +28,4 @@ app.use("/forgotpassword", forgotPasswordRoutes);
 app.use("/", loginRoutes);
 app.use("/posts", postRoutes);
 app.use("/comments", commentRoutes);
-app.listen(3000);
+app.listen(PORT);
