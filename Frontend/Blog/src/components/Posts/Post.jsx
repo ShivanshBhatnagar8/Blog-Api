@@ -20,7 +20,9 @@ function Post({ url, showSidebar, allPosts, setIsLoggedIn }) {
       credentials: "include",
     }).then((r) => r.json());
 
-  const { data, error } = useSWR(postUrl, fetcher);
+  const { data, error } = useSWR(postUrl, fetcher, {
+    revalidateOnFocus: false,
+  });
 
   useEffect(() => {
     if (isGuestMode) {
