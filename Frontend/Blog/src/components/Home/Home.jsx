@@ -7,16 +7,16 @@ import { useNavigate } from "react-router";
 import WritingImage from "../../assets/img/Writing.png";
 import BlogImage from "../../assets/img/Blog.png";
 
-function Home({ setInLoggedIn }) {
+function Home({ setInLoggedIn, isLoggedIn }) {
   const navigate = useNavigate();
   async function guestMode() {
     try {
       const response = await fetch(`${URL}logout`, {
         method: "POST",
-        withCredentials: true,
         credentials: "include",
         headers: { "Content-Type": "application/json" },
       });
+      setInLoggedIn(false);
       if (response.status === 500) {
         navigate("/error", { state: { error: true } });
       }
@@ -26,7 +26,6 @@ function Home({ setInLoggedIn }) {
   }
   function click() {
     guestMode();
-    setInLoggedIn(false);
   }
 
   return (
