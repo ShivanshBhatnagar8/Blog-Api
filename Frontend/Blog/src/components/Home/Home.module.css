@@ -201,7 +201,7 @@ img:hover {
     text-align: center;
   }
   .imageCollage {
-    width: 50%;
+    width: 40%;
     margin-top: 10px;
     margin-bottom: 10px;
   }
@@ -219,8 +219,29 @@ img:hover {
     left: 150px;
   }
 }
+@media (max-width: 400px) {
+  .btnContainer {
+    width: 85%;
+  }
+  .imageCollage {
+    width: 50%;
+  }
+}
 @media (max-width: 350px) {
   .imageCollage {
     width: 60%;
+  }
+  .imageCollage img {
+    width: 100px;
+  }
+  .topImg {
+    left: 42px;
+  }
+  .bottomImg {
+    left: -45px;
+    height: 90px;
+  }
+  .middleImg {
+    left: 135px;
   }
 }
