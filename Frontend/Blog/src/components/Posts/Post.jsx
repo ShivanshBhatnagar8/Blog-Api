@@ -23,7 +23,9 @@ function Post({ url, showSidebar, allPosts, setIsLoggedIn }) {
   const { data, error } = useSWR(postUrl, fetcher);
 
   useEffect(() => {
-    setIsLoggedIn(false);
+    if (isGuestMode) {
+      setIsLoggedIn(false);
+    }
 
     if (error) {
       navigate("/error", { state: { error: true } });
