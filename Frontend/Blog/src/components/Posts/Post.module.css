@@ -216,5 +216,15 @@ h2 {
 @media (max-width: 400px) {
   .postSectionContent {
     width: 100%;
+    padding: 0.5rem 0.5rem;
+  }
+  .postSectionBox span {
+    font-size: 1rem;
+  }
+  .authorName {
+    font-size: 1rem;
+  }
+  .postSectionDate {
+    font-size: 1rem;
   }
 }
