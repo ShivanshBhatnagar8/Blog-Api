@@ -26,7 +26,7 @@ const validationSchema = {
   email: {
     optional: true,
     isEmail: true,
-    errorMessage: "Not a valid e-mail address",
+    errorMessage: "Not a valid email address",
   },
   password: {
     optional: true,
