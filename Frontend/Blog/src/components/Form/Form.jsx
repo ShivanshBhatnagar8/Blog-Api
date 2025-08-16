@@ -77,7 +77,6 @@ function Form({
         const responseErrors =
           data["errors"] !== undefined ? data["errors"] : [data];
         const newErrors = {};
-
         responseErrors.forEach((element) => {
           for (const fields in fieldKeywords) {
             if (element.toLowerCase().includes(fields)) {
@@ -186,6 +185,7 @@ function Input({
           onChange={(e) => handleChange(e.target.name, e.target.value)}
         />
         {error.username ? <p className={styles.error}>{error.username}</p> : ""}
+        {error.email ? <p className={styles.error}>{error.email}</p> : ""}
         <label htmlFor="password">Password</label>
         <input
           id="password"
@@ -251,7 +251,7 @@ function Input({
           required
           onChange={(e) => handleChange(e.target.name, e.target.value)}
         />
-        {error.email ? <p>{error.email}</p> : ""}
+        {error.email ? <p className={styles.error}>{error.email}</p> : ""}
         <label htmlFor="password">Password</label>
         <input
           id="password"
@@ -273,7 +273,11 @@ function Input({
           required
           onChange={(e) => handleChange(e.target.name, e.target.value)}
         />
-        {error.confirmpassword ? <p>{error.confirmpassword}</p> : ""}
+        {error.confirmpassword ? (
+          <p className={styles.error}>{error.confirmpassword}</p>
+        ) : (
+          ""
+        )}
         <button type="submit">Sign Up</button>
         {error.username ? <p className={styles.error}>{error.username}</p> : ""}
       </>
@@ -293,6 +297,7 @@ function Input({
           onChange={(e) => handleChange(e.target.name, e.target.value)}
         />
         {error.email ? <p className={styles.error}>{error.email}</p> : ""}
+        {error.username ? <p className={styles.error}>{error.username}</p> : ""}
         <label htmlFor="password">Password</label>
         <input
           id="password"
