@@ -68,6 +68,7 @@ form button:hover {
 .error {
   font-size: 1.4rem;
   font-size: 400;
+  color: red;
 }
 .toast {
   font-size: 1.4rem;
