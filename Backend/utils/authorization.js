@@ -1,7 +1,8 @@
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
 function createAuthToken(id) {
-  return jwt.sign({ id }, "secret", { expiresIn: "7d" });
+  return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "7d" });
 }
 
 function verifyAuthToken(req, res, next) {
@@ -13,7 +14,7 @@ function verifyAuthToken(req, res, next) {
       );
   }
 
-  jwt.verify(req.cookies.jwt, "secret", (error, decodedToken) => {
+  jwt.verify(req.cookies.jwt, process.env.JWT_SECRET, (error, decodedToken) => {
     if (error) {
       return res.status(401).json("Invalid token");
     }
