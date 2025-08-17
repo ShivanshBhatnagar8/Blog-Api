@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
 const {
   getAllLikesPosts,
   getAllPosts,
@@ -20,7 +21,7 @@ async function getUserFromToken(req, res) {
   const token = req.cookies.jwt;
   if (token) {
     try {
-      user = jwt.verify(token, "secret");
+      user = jwt.verify(token, process.env.JWT_SECRET);
       isAuthorized = true;
     } catch (err) {
       isAuthorized = false;
