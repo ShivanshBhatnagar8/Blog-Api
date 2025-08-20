@@ -40,7 +40,7 @@ async function logoutUser(req, res) {
     res.clearCookie("jwt", {
       httpOnly: true,
       secure: true,
-      sameSite: "none",
+      sameSite: "Strict",
       path: "/",
     });
     res.status(200).json(`Logout successful`);
