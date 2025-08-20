@@ -14,7 +14,7 @@ const commentRoutes = require("./routes/Comments");
 const PORT = process.env.PORT || 3000;
 app.use(
   cors({
-    origin: true,
+    origin: "https://text-nest.vercel.app",
     credentials: true,
     withCredentials: true,
   })
