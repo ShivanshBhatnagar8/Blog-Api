@@ -20,7 +20,7 @@ async function loginUser(req, res) {
       res.cookie("jwt", token, {
         httpOnly: true,
         maxAge: 7 * 24 * 60 * 60 * 1000,
-        sameSite: "Strict",
+        sameSite: "none",
         secure: true,
       });
       return res.status(200).json(`Login Successful`);
@@ -40,7 +40,7 @@ async function logoutUser(req, res) {
     res.clearCookie("jwt", {
       httpOnly: true,
       secure: true,
-      sameSite: "Strict",
+      sameSite: "none",
       path: "/",
     });
     res.status(200).json(`Logout successful`);
